@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo Swing Trader - Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">📈 Algo Swing Trader</h1>
+            <ul class="nav-menu">
+                <li><a href="/" class="active">Dashboard</a></li>
+                <li><a href="/trades">Trades</a></li>
+                <li><a href="/analytics">Analytics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h2>Trading Dashboard</h2>
+            <div class="strategy-controls">
+                <button id="startBtn" class="btn btn-success">Start Strategy</button>
+                <button id="stopBtn" class="btn btn-danger">Stop Strategy</button>
+                <span id="strategyStatus" class="status-badge">Stopped</span>
+            </div>
+        </div>
+
+        <!-- Account Summary -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>Total Equity</h3>
+                <p class="metric" id="totalEquity">$0.00</p>
+            </div>
+            <div class="card">
+                <h3>Daily P&L</h3>
+                <p class="metric" id="dailyPnl">$0.00</p>
+            </div>
+            <div class="card">
+                <h3>Total P&L</h3>
+                <p class="metric" id="totalPnl">$0.00</p>
+            </div>
+            <div class="card">
+                <h3>Win Rate</h3>
+                <p class="metric" id="winRate">0%</p>
+            </div>
+            <div class="card">
+                <h3>Open Positions</h3>
+                <p class="metric" id="openPositions">0</p>
+            </div>
+            <div class="card">
+                <h3>Max Drawdown</h3>
+                <p class="metric" id="maxDrawdown">0%</p>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-section">
+            <div class="chart-container">
+                <h3>Equity Curve</h3>
+                <canvas id="equityChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Daily P&L (Last 30 Days)</h3>
+                <canvas id="pnlChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Recent Trades -->
+        <div class="section">
+            <h3>Recent Trades</h3>
+            <table id="recentTrades" class="table">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Side</th>
+                        <th>Quantity</th>
+                        <th>Entry</th>
+                        <th>Exit</th>
+                        <th>P&L</th>
+                        <th>P&L %</th>
+                        <th>Exit Reason</th>
+                    </tr>
+                </thead>
+                <tbody id="tradesTableBody">
+                    <tr>
+                        <td colspan="8" style="text-align: center;">No trades yet</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Open Positions -->
+        <div class="section">
+            <h3>Open Positions</h3>
+            <table id="openPositionsTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Side</th>
+                        <th>Quantity</th>
+                        <th>Entry Price</th>
+                        <th>Current Price</th>
+                        <th>Unrealized P&L</th>
+                        <th>Stop Loss</th>
+                        <th>Take Profit</th>
+                    </tr>
+                </thead>
+                <tbody id="positionsTableBody">
+                    <tr>
+                        <td colspan="8" style="text-align: center;">No open positions</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

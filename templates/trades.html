@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo Swing Trader - Trades</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">📈 Algo Swing Trader</h1>
+            <ul class="nav-menu">
+                <li><a href="/">Dashboard</a></li>
+                <li><a href="/trades" class="active">Trades</a></li>
+                <li><a href="/analytics">Analytics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Trade History</h2>
+        
+        <div class="filters">
+            <select id="statusFilter">
+                <option value="">All Statuses</option>
+                <option value="OPEN">Open</option>
+                <option value="CLOSED">Closed</option>
+            </select>
+            <input type="text" id="symbolFilter" placeholder="Filter by symbol...">
+            <button id="applyFilters" class="btn">Apply Filters</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Symbol</th>
+                    <th>Side</th>
+                    <th>Quantity</th>
+                    <th>Entry Price</th>
+                    <th>Exit Price</th>
+                    <th>Entry Time</th>
+                    <th>Exit Time</th>
+                    <th>P&L</th>
+                    <th>P&L %</th>
+                    <th>Status</th>
+                    <th>Exit Reason</th>
+                </tr>
+            </thead>
+            <tbody id="tradesBody">
+                <tr>
+                    <td colspan="12" style="text-align: center;">Loading...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/static/js/trades.js"></script>
+</body>
+</html>

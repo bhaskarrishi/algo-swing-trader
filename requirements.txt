@@ -1,0 +1,44 @@
+# Web Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+jinja2==3.1.3
+python-multipart==0.0.6
+aiofiles==23.2.1
+
+# Database
+sqlalchemy==2.0.25
+mysqlclient==2.2.1
+alembic==1.13.1
+
+# Market Data & Broker APIs
+websocket-client==1.7.0
+ib-insync==0.9.86
+requests==2.31.0
+aiohttp==3.9.1
+
+# Technical Analysis
+TA-Lib==0.4.28
+pandas-ta==0.3.14b0
+pandas==2.1.4
+numpy==1.26.3
+
+# Configuration & Environment
+python-dotenv==1.0.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Task Scheduling
+APScheduler==3.10.4
+
+# Utilities
+pytz==2023.3.post1
+python-dateutil==2.8.2
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3
+pytest-cov==4.1.0
+httpx==0.26.0
+
+# Logging & Monitoring
+python-json-logger==2.0.7

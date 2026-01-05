@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo Swing Trader - Analytics</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">📈 Algo Swing Trader</h1>
+            <ul class="nav-menu">
+                <li><a href="/">Dashboard</a></li>
+                <li><a href="/trades">Trades</a></li>
+                <li><a href="/analytics" class="active">Analytics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Performance Analytics</h2>
+
+        <!-- Performance Metrics -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>Total Trades</h3>
+                <p class="metric" id="totalTrades">0</p>
+            </div>
+            <div class="card">
+                <h3>Winning Trades</h3>
+                <p class="metric" id="winningTrades">0</p>
+            </div>
+            <div class="card">
+                <h3>Losing Trades</h3>
+                <p class="metric" id="losingTrades">0</p>
+            </div>
+            <div class="card">
+                <h3>Profit Factor</h3>
+                <p class="metric" id="profitFactor">0.00</p>
+            </div>
+            <div class="card">
+                <h3>Average Win</h3>
+                <p class="metric" id="avgWin">$0.00</p>
+            </div>
+            <div class="card">
+                <h3>Average Loss</h3>
+                <p class="metric" id="avgLoss">$0.00</p>
+            </div>
+        </div>
+
+        <!-- Distribution Charts -->
+        <div class="charts-section">
+            <div class="chart-container">
+                <h3>P&L by Symbol</h3>
+                <canvas id="symbolChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>P&L by Side</h3>
+                <canvas id="sideChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Risk Metrics -->
+        <div class="section">
+            <h3>Risk Metrics</h3>
+            <div class="risk-metrics">
+                <div class="risk-item">
+                    <span>Circuit Breaker Status:</span>
+                    <span id="circuitBreaker" class="badge">Inactive</span>
+                </div>
+                <div class="risk-item">
+                    <span>Position Limits:</span>
+                    <span id="positionLimits">OK</span>
+                </div>
+                <div class="risk-item">
+                    <span>Daily Loss Limit:</span>
+                    <span id="dailyLossLimit">OK</span>
+                </div>
+                <div class="risk-item">
+                    <span>Drawdown Limit:</span>
+                    <span id="drawdownLimit">OK</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/analytics.js"></script>
+</body>
+</html>
